@@ -65,6 +65,13 @@ open class DBSphereView: UIView, UIGestureRecognizerDelegate {
         normalDirection = DBPoint(x: CGFloat(a), y: CGFloat(b), z: 0)
         self.timerStart()
     }
+
+    /// Active destruction required
+    public func destoryView() {
+        tags.removeAll()
+        timer.invalidate()
+        inertia.invalidate()
+    }
     
     /**
      *  Starts the cloud autorotation animation.
